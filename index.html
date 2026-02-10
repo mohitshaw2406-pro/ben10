@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnipedia | Official Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="backToTop" onclick="window.scrollTo(0,0)">↑</div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-left" onclick="window.scrollTo(0,0)">
+            <img src="ben 10 aliens/logo.png" alt="Logo" class="nav-logo">
+            <span class="logo-text">Omnipedia</span>
+        </div>
+        <div class="nav-right">
+            <div class="nav-links" id="navLinks">
+                <a onclick="window.scrollTo(0,0)" class="active-nav">Home</a>
+                <a href="#aliens-section">Aliens</a>
+                <a href="#characters-section">Characters</a>
+                <a href="#series-section">Series</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>It's <span>Hero Time</span></h1>
+            <p>Welcome to the ultimate DNA database. Access the power of the Omnitrix.</p>
+            <a href="#aliens-section" class="btn-main">Unlock Aliens</a>
+        </div>
+    </section>
+
+    <section id="aliens-section">
+        <div class="section-header">
+            <h2>Alien Gallery</h2><br>
+            <div class="search-container-large">
+                <input type="text" placeholder="Search by name..." id="alienSearch">
+            </div>
+        </div>
+        <div class="slider" id="alienSlider"></div>
+    </section>
+
+    <section id="characters-section">
+        <div class="section-header">
+            <h2>The Characters</h2>
+            <p style="color: #94a3b8;">Scanning biometric data... Select a profile</p>
+        </div>
+        <div class="char-grid">
+            <div class="char-card" style="--theme-color: #22c55e; --theme-glow: rgba(34, 197, 94, 0.6);" onclick="this.classList.toggle('expanded')">
+                <div class="img-box"><img src="ben 10 aliens/ben-Photoroom.png" alt="Ben"></div>
+                <div class="details">
+                    <h3>Ben Tennyson</h3>
+                    <p class="bio-text">The legendary hero of the universe. Ben found the Omnitrix at age 10 and has since evolved into Earth's greatest guardian.</p>
+                </div>
+            </div>
+            <div class="char-card" style="--theme-color: #f472b6; --theme-glow: rgba(244, 114, 182, 0.6);" onclick="this.classList.toggle('expanded')">
+                <div class="img-box"><img src="ben 10 aliens/gwen-Photoroom.png" alt="Gwen"></div>
+                <div class="details">
+                    <h3>Gwen Tennyson</h3>
+                    <p class="bio-text">A powerful Anodite and master of mana. Gwen's strategic mind and magic abilities are vital to every mission.</p>
+                </div>
+            </div>
+            <div class="char-card" style="--theme-color: #60a5fa; --theme-glow: rgba(96, 165, 250, 0.6);" onclick="this.classList.toggle('expanded')">
+                <div class="img-box"><img src="ben 10 aliens/kevin-Photoroom.png" alt="Kevin"></div>
+                <div class="details">
+                    <h3>Kevin Levin</h3>
+                    <p class="bio-text">An Osmosian who can absorb matter and energy. Once Ben's greatest rival, now his most reliable mechanic and ally.</p>
+                </div>
+            </div>
+            <div class="char-card" style="--theme-color: #ef4444; --theme-glow: rgba(239, 68, 68, 0.6);" onclick="this.classList.toggle('expanded')">
+                <div class="img-box"><img src="ben 10 aliens/grandpa max-Photoroom.png" alt="Max"></div>
+                <div class="details">
+                    <h3>Grandpa Max</h3>
+                    <p class="bio-text">A legendary retired Plumber. Max taught the kids that being a hero is about more than just having powers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="series-section">
+        <div class="section-header">
+            <h2>Series Timeline</h2>
+            <p style="color: #94a3b8;">Accessing archives... Explore the saga</p>
+        </div>
+        <div class="series-grid">
+            <div class="series-card" style="--theme-color: #22c55e; --theme-glow: rgba(34, 197, 94, 0.5);" onclick="this.classList.toggle('expanded')">
+                <div class="img-box"><img src="ben 10 aliens/classic.jpg" alt="Classic"></div>
+                <div class="details">
+                    <h3>Classic Era</h3>
+                    <p class="bio-text">The original summer discovery. Ben, Gwen, and Max travel the country facing off against Vilgax and the first wave of alien threats.</p>
+                </div>
+            </div>
+            <div class="series-card" style="--theme-color: #a855f7; --theme-glow: rgba(168, 85, 247, 0.5);" onclick="this.classList.toggle('expanded')">
+                <div class="img-box"><img src="ben 10 aliens/alienforce.jpg" alt="Alien Force"></div>
+                <div class="details">
+                    <h3>Alien Force</h3>
+                    <p class="bio-text">Five years later. A teenage Ben re-donns the Omnitrix to find his missing grandfather and stop a secret Highbreed invasion.</p>
+                </div>
+            </div>
+            <div class="series-card" style="--theme-color: #3b82f6; --theme-glow: rgba(59, 130, 246, 0.5);" onclick="this.classList.toggle('expanded')">
+                <div class="img-box"><img src="ben 10 aliens/ultimate.jpg" alt="Ultimate Alien"></div>
+                <div class="details">
+                    <h3>Ultimate Alien</h3>
+                    <p class="bio-text">With the Ultimatrix, Ben can evolve his aliens to their 'Ultimate' forms. His identity is revealed to the world for the first time.</p>
+                </div>
+            </div>
+            <div class="series-card" style="--theme-color: #fbbf24; --theme-glow: rgba(251, 191, 36, 0.5);" onclick="this.classList.toggle('expanded')">
+                <div class="img-box"><img src="ben 10 aliens/omniverse.png" alt="Omniverse"></div>
+                <div class="details">
+                    <h3>Omniverse</h3>
+                    <p class="bio-text">A new Omnitrix and a new partner, Rook Blonko. Ben explores Undertown and uncovers secrets from both the past and future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

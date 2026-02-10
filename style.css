@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #0b0f1a;
+    color: white;
+    text-align: center;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 2000;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.navbar.scrolled {
+    padding: 12px 50px;
+    background: rgba(11, 15, 26, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.nav-logo {
+    height: 40px;
+    filter: drop-shadow(0 0 8px #22c55e);
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: #22c55e;
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.nav-links a.active-nav {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.1);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(11, 15, 26, 0.7), rgba(11, 15, 26, 0.7)), url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content h1 span {
+    color: #22c55e;
+    display: block;
+    text-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+}
+
+.btn-main {
+    padding: 15px 40px;
+    background: #22c55e;
+    color: #0b0f1a;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 25px;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+.btn-main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+}
+
+/* --- High-Tech Alien Search --- */
+.search-container-large {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.search-container-large input {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: white;
+    outline: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    box-shadow: inset 0 0 10px rgba(34, 197, 94, 0.1);
+}
+
+.search-container-large input:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+    background: rgba(34, 197, 94, 0.05);
+}
+
+/* --- Aliens Section (Fixed Layout) --- */
+#aliens-section {
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+.slider {
+    display: flex;
+    gap: 25px;
+    padding: 60px 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.slider::-webkit-scrollbar {
+    height: 6px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+    background: #22c55e;
+    border-radius: 10px;
+}
+
+.alien-card {
+    min-width: 280px;
+    background: #161b22;
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    scroll-snap-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* DNA Scan Line for All Sections */
+.alien-card::before,
+.char-card::before,
+.series-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--theme-color, #22c55e), transparent);
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.alien-card:hover::before,
+.char-card:hover::before,
+.series-card:hover::before {
+    animation: scanLoop 2s linear infinite;
+}
+
+@keyframes scanLoop {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+.alien-card.active {
+    min-width: 380px;
+    border-color: var(--alien-color);
+    box-shadow: 0 0 30px var(--alien-color-alpha);
+    background: var(--alien-color-gradient);
+}
+
+.alien-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    transition: 0.4s;
+}
+
+.alien-card:hover img {
+    transform: scale(1.1);
+}
+
+.alien-info {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.5s ease;
+    color: white;
+    line-height: 1.6;
+}
+
+.alien-card.active .alien-info {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+/* --- Shared Grid Style for Characters & Series --- */
+.char-grid,
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    padding: 0 50px;
+    perspective: 1000px;
+}
+
+.char-card,
+.series-card {
+    background: #161b22;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.char-card:hover,
+.series-card:hover {
+    border-color: var(--theme-color);
+    box-shadow: 0 0 25px var(--theme-glow);
+    transform: translateY(-10px) rotateX(5deg);
+}
+
+.char-card.expanded,
+.series-card.expanded {
+    border-color: var(--theme-color);
+    box-shadow: 0 0 40px var(--theme-glow);
+    animation: hologramFlicker 2s infinite alternate;
+}
+
+@keyframes hologramFlicker {
+    0% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+
+    5% {
+        opacity: 0.95;
+        filter: brightness(1.2);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.img-box {
+    height: 350px;
+    background: #0b0f1a;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+
+.char-card:hover .img-box img,
+.series-card:hover .img-box img {
+    transform: scale(1.1) translateZ(40px);
+}
+
+.details {
+    padding: 25px;
+    background: #161b22;
+}
+
+.details h3 {
+    color: #22c55e;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.char-card.expanded h3,
+.series-card.expanded h3 {
+    color: var(--theme-color);
+    text-shadow: 0 0 10px var(--theme-glow);
+}
+
+.bio-text {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.expanded .bio-text {
+    max-height: 150px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+/* Section Specific Backgrounds */
+#characters-section {
+    padding: 100px 0;
+    background: rgba(34, 197, 94, 0.02);
+}
+
+#series-section {
+    padding: 100px 0;
+    background: #0b0f1a;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Float Button */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #0b0f1a;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3000;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
