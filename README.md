@@ -1,52 +1,24 @@
-# Ben10
+# Ben 10 Web Project 👽🕑
 
-A fun web project inspired by the Ben 10 universe.
+A simple and interactive Ben 10–themed web page created using HTML, CSS, and JavaScript.
 
----
-
-## 📌 About
-
-This project is a simple and interactive Ben10-themed webpage built using HTML, CSS, and JavaScript.  
-You can add animations, transformations, or character effects inside this site.
-
----
-
-## 🚀 Features
-
-- Ben10 themed UI
+## Features
+- Ben 10 themed UI
+- Smooth animations & transitions
 - Responsive design
-- Smooth animations
-- Easy to edit and customize
-- Clean folder structure
-
+- Interactive buttons/effects
+- Clean and simple code structure
+  
 ---
-
-## 🛠️ Technologies Used
-
+## Technologies Used
 - **HTML**
 - **CSS**
 - **JavaScript**
+ 
+---
+## Live Demo
+🔗 https://mohitshaw2406-pro.github.io/Ben10/
 
 ---
-
-## 💻 How to Run the Project
-
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/mohitshaw2406-pro/Ben10.git
-    ```
-2. Open the folder.
-3. Open `index.html` in any web browser.
-
----
-
-## 📁 Folder Structure
-
-```plaintext
-Ben10/
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   └── images/
-└── README.md
+## Author
+**Mohit Shaw**
